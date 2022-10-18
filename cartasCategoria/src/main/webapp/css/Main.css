@@ -1,9 +1,14 @@
 @charset "UTF-8";
 
-div{
-	margin-top: 10%;
+tr{
+	text-align:center;
+	padding: 10px
+	
+	
 }
 table{
+	
+  border-collapse: collapse 10px solid black;
 	border-radius: 20px;
 	padding: 10px;
 	background-color:#C3FFEB;
@@ -12,17 +17,14 @@ table{
 	box-shadow: 20px 21px 36px 7px rgba(0,0,0,0.75);
 	
 }
-
-td.img{
-	padding-right: 15px
-}
-
 body{
-	background-image: url("../images/a.jpg");
+	background-image: url("../imges/b.jpg");
 	background-size: cover;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 }
+
+
 
 
 @font-face {
@@ -46,7 +48,7 @@ input{
 	display:inline-block;
 }
 
-input[type="submit"]:hover{
+button:hover{
 	cursor:pointer;
 	transition:all .5s ease-in-out;
 	overflow:hidden;
@@ -54,6 +56,23 @@ input[type="submit"]:hover{
 	-webkit-box-shadow: 0px 0px 15px 15px #000000;
 }
 
+input[type=checkbox]
+{
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari y Chrome */
+  padding: 10px;
+}
+
+h1{
+	font-size: 60px;
+	letter-spacing: 2px;
+	font-weight: lighter;
+}
+
 p{
 	text-align: center;
+}
+div{
+	margin-top: 4%;
 }

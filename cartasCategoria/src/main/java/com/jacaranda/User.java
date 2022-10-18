@@ -16,6 +16,15 @@ public class User {
 		this.password ="null";
 		this.name = "null";
 	}
+	
+	
+	public User(String password, String name) {
+		super();
+		this.password = password;
+		this.name = name;
+	}
+
+
 
 	public String getPassword() {
 		return password;
