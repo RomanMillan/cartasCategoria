@@ -17,6 +17,16 @@ public class ConnectionDAO {
 		session = sf.openSession();
 	}
 	
+	//Metodo leer Usuario
+	public boolean validUser(String password) {
+		boolean valid = false;
+		User u = (User) session.get(User.class,password);
+		if(u != null) {
+			valid = true;
+		}
+		return valid;
+	}
+	
 	//Metodos para clase Card
 	public void addCard(Card c) {
 		session.getTransaction().begin();

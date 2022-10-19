@@ -6,12 +6,12 @@
 		<meta charset="UTF-8">
 		<title>Cartas Gwent</title>
 		<link rel="stylesheet" href="../css/Wrong.css" type="text/css">
-		<link rel="shortcut icon" href="icon.png">
+		<link rel="shortcut icon" href="../images/icon.png">
 	</head>
 	<body>
-		<img alt="ImgenError" src="geralSad.png">
+		<img alt="ImgenError" src="../images/geralSad.png">
 		<p>Error al insertar el usuario</p>
-		<a href="Index.html">
+		<a href="../html/Index.html">
 			<button>Inicio</button>
 		</a>
 	</body>

@@ -3,11 +3,13 @@ package com.jacaranda;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="USER")
 public class User {
+	@Id
 	private String password;
 	private String name ;
 	

@@ -1,3 +1,4 @@
+<%@page import="com.jacaranda.ConnectionDAO"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="com.jacaranda.User"%>
@@ -18,15 +19,15 @@
 			
 			
 			//comprobamos que esos datos son correctos
-			User user1 = new User(password,user);
-				
-			if(user1.passwordConfirmation()==true){ // TODO: falta hacer un metodo para comprobar si el usuario está logeado
-				
-				
-				 HttpSession sesion = request.getSession();
+			User u = new User(password,user);
+			ConnectionDAO s = new ConnectionDAO();
+			
+			if(s.validUser(u.getPassword())== true){ 
+				HttpSession sesion = request.getSession();
 				sesion.setAttribute("login","true");
 				sesion.setAttribute("user",user);
 		%>
+		 	<jsp:forward page="Main.jsp"></jsp:forward>
 		<% 
 			}else{
 		%>
