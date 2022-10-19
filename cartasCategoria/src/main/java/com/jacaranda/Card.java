@@ -4,6 +4,7 @@ import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -11,14 +12,14 @@ import javax.persistence.Table;
 @Entity
 @Table(name="CARD")
 public class Card {
-	//Preguntar a inma si poner @GeneratedValue
+	@GeneratedValue
 	private int code;
 	private String name;
 	private double price;
 	private String acquisition ;
 	private boolean deck_cards;
 	@ManyToOne
-	@JoinColumn(name="nameCategory",
+	@JoinColumn(name="codeCategory",
 	foreignKey = @ForeignKey(name="fk_historial"))
 	private Category categ;
 	
@@ -37,7 +38,7 @@ public class Card {
 	}
 	public void setCode(int code) throws ExceptionCard {
 		if(code<0) {
-			throw new ExceptionCard("El código no puede ser menor que 0");
+			throw new ExceptionCard("El cï¿½digo no puede ser menor que 0");
 		}
 		this.code = code;
 	}
@@ -46,7 +47,7 @@ public class Card {
 	}
 	public void setName(String name) throws ExceptionCard {
 		if(name==null||"".equals(name)) {
-			throw new ExceptionCard("El campo nombre es obligatório");
+			throw new ExceptionCard("El campo nombre es obligatï¿½rio");
 		}else if(name.length()>100) {
 			throw new ExceptionCard("El nombre no puede tener una longitud mayor a 100");
 		}
