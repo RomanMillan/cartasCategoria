@@ -4,12 +4,15 @@ import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="CATEGORY")
 public class Category {
+	@GeneratedValue
+	private int codeCategory;
 	private String nameCategory;
 	@OneToMany(mappedBy="CATEGORY")
 	private Set<Category>category;
