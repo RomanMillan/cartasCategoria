@@ -17,9 +17,9 @@ public class Category {
 	@OneToMany(mappedBy="CATEGORY")
 	private Set<Category>category;
 	
-	public Category(String nameCategory) {
+	public Category() {
 		super();
-		this.nameCategory = nameCategory;
+		this.nameCategory = null;
 	}
 
 	public String getNameCategory() {

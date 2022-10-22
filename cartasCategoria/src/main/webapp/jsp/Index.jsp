@@ -11,18 +11,22 @@
 		<link rel="shortcut icon" href="../images/icon.png">
 	</head>
 	<body>
+	<jsp:useBean id="master" class="com.jacaranda.User"/>
 		<%
 			
 			//cogemos los datos que ha insertado el usuario
 			String user = request.getParameter("user");
 			String password = request.getParameter("password");
+			master.setPassword(password);
+			master.setName(user);
 			
 			
 			//comprobamos que esos datos son correctos
-			User u = new User(password,user);
+			
 			ConnectionDAO s = new ConnectionDAO();
 			
-			if(s.validUser(u.getPassword())== true){ 
+			
+			if(s.validUser(master.getPassword())== true){ 
 				HttpSession sesion = request.getSession();
 				sesion.setAttribute("login","true");
 				sesion.setAttribute("user",user);

@@ -56,4 +56,9 @@ public class ConnectionDAO {
 		session.getTransaction().commit();
 	}
 	
+	public Category showCategory(int id) {
+		Category c = (Category) session.get(Category.class, id);
+		return c;
+	}
+	
 }
