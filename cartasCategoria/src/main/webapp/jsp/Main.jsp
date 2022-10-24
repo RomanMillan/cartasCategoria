@@ -12,21 +12,30 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	<link rel="stylesheet" href="../css/Main.css" type="text/css">
+	<link rel="shortcut icon" href="../images/icon.png">
 </head>
 	<body>
-	
-		<table border="11">
-		<%
-		
-		CategoryControl c = new CategoryControl();
-		List<Category> category = CategoryControl.getCategoryC();
-		StringBuilder text = new StringBuilder();
-		for(Category i: category){
-			text.append("<tr><td> <a href='Card.jsp?key="+i.getCodeCategory()+"'</a>"+ i.getNameCategory()+"</td></tr>");
-		}
-		
-		%>
-		<%=text.toString()%>
-	</table>
+		<div align="center">
+			<table>
+			<%
+			
+			CategoryControl c = new CategoryControl();
+			List<Category> category = CategoryControl.getCategoryC();
+			StringBuilder text = new StringBuilder();
+			for(Category i: category){
+				text.append("<tr><td> <a href='Card.jsp?key="+i.getCodeCategory()+"'</a>"+ i.getNameCategory()+"</td>");
+				text.append("<td><a href='../html/AddCategory.html?key="+i.getCodeCategory()+"'><img width=50px id=delete src=../images/add.png ></a></td>");
+				text.append("<td><a href='DeleteCategory.jsp?key="+i.getCodeCategory()+"'><img width=50px id=delete src=../images/mod.png ></a></td>");
+				text.append("<td><a href='DeleteCategory.jsp?key="+i.getCodeCategory()+"'><img width=50px id=delete src=../images/dele.png ></a></td>");
+				
+				text.append("</tr>");
+				
+			}
+			
+			%>
+			<%=text.toString()%>
+		</table>
+	</div>
 	</body>
 </html>

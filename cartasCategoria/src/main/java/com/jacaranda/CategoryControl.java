@@ -22,4 +22,32 @@ public class CategoryControl {
 		return category;
 	}
 	
+	public static boolean deleteCategory(int id) {
+		boolean delete = false;
+		Session session = ConnectionDAO.getSession();
+		try {
+			session.getTransaction().begin();
+			session.delete(id);
+			session.getTransaction().commit();
+			delete=true;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return delete;
+	}
+	
+	public static boolean addCategory( Category category) {
+		boolean add = false;
+		Session session = ConnectionDAO.getSession();
+		
+		try {
+			session.getTransaction().begin();
+			session.save(category);
+			session.getTransaction();
+			add=true;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return add;
+	}
 }
