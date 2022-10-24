@@ -5,13 +5,14 @@ import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="CARD")
+@Entity(name="CARD")
 public class Card {
+	@Id
 	@GeneratedValue
 	private int code;
 	private String name;
@@ -19,8 +20,7 @@ public class Card {
 	private String acquisition ;
 	private boolean deck_cards;
 	@ManyToOne
-	@JoinColumn(name="codeCategory",
-	foreignKey = @ForeignKey(name="fk_historial"))
+	@JoinColumn(name="codeCategory")
 	private Category categ;
 	
 	public Card(int code, String name, double price, String acquisition, boolean deck_cards) {

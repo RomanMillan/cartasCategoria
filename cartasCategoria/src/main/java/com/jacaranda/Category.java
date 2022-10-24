@@ -5,21 +5,22 @@ import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="CATEGORY")
+@Entity(name="CATEGORY")
 public class Category {
-	@GeneratedValue
+	@Id
 	private int codeCategory;
 	private String nameCategory;
-	@OneToMany(mappedBy="CATEGORY")
-	private Set<Category>category;
+	@OneToMany(mappedBy="categ")
+	private Set<Card> card;
 	
 	public Category() {
 		super();
 		this.nameCategory = null;
+		this.card = null;
 	}
 
 	public String getNameCategory() {
@@ -34,19 +35,30 @@ public class Category {
 		this.nameCategory = nameCategory;
 	}
 
-	public Set<Category> getCategory() {
-		return category;
+	public Set<Card> getCategory() {
+		return card;
 	}
 
-	public void setCategory(Set<Category> category) {
-		this.category = category;
+	public void setCategory(Set<Card> category) {
+		this.card = category;
+	}
+	
+	
+	public int getCodeCategory() {
+		return codeCategory;
 	}
 
+	public Set<Card> getCard() {
+		Set<Card> c = card;
+		return c;
+	}
+	
+	
 	@Override
 	public int hashCode() {
-		return Objects.hash(category);
+		return Objects.hash(codeCategory);
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -56,8 +68,10 @@ public class Category {
 		if (getClass() != obj.getClass())
 			return false;
 		Category other = (Category) obj;
-		return Objects.equals(category, other.category);
+		return codeCategory == other.codeCategory;
 	}
+
+	
 	
 	
 	

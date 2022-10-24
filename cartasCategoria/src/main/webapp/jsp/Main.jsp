@@ -1,3 +1,7 @@
+<%@page import="java.util.List"%>
+<%@page import="com.jacaranda.CategoryControl"%>
+<%@page import="com.mysql.cj.Query"%>
+<%@page import="org.hibernate.Session"%>
 <%@page import="com.jacaranda.Category"%>
 <%@page import="com.jacaranda.ConnectionDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -11,14 +15,18 @@
 </head>
 	<body>
 	
-		<h1>Hola </h1>
+		<table border="11">
 		<%
 		
-		ConnectionDAO c = new ConnectionDAO();
-		
+		CategoryControl c = new CategoryControl();
+		List<Category> category = CategoryControl.getCategoryC();
+		StringBuilder text = new StringBuilder();
+		for(Category i: category){
+			text.append("<tr><td> <a href='Card.jsp?key="+i.getCodeCategory()+"'</a>"+ i.getNameCategory()+"</td></tr>");
+		}
 		
 		%>
-		<%=c.showCategory(1) %>
-	
+		<%=text.toString()%>
+	</table>
 	</body>
 </html>

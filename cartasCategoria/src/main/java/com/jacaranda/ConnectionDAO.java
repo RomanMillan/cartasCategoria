@@ -7,9 +7,9 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class ConnectionDAO {
-	private StandardServiceRegistry sr ;
-	private SessionFactory sf;
-	private Session session;
+	private static StandardServiceRegistry sr ;
+	private static SessionFactory sf;
+	private static Session session;
 	
 	public ConnectionDAO() {
 		sr = new StandardServiceRegistryBuilder().configure().build();
@@ -17,6 +17,12 @@ public class ConnectionDAO {
 		session = sf.openSession();
 	}
 	
+	
+	public static Session getSession() {
+		return session;
+	}
+
+
 	//Metodo leer Usuario
 	public boolean validUser(String password) {
 		boolean valid = false;
