@@ -13,7 +13,6 @@ import javax.persistence.Table;
 @Entity(name="CARD")
 public class Card {
 	@Id
-	@GeneratedValue
 	private int code;
 	private String name;
 	private double price;
@@ -23,6 +22,13 @@ public class Card {
 	@JoinColumn(name="codeCategory")
 	private Category categ;
 	
+	
+	//constructores
+	public Card() {
+		super();
+	}
+
+
 	public Card(int code, String name, double price, String acquisition, boolean deck_cards) {
 		super();
 		this.code = code;
@@ -32,13 +38,13 @@ public class Card {
 		this.deck_cards = deck_cards;
 	}
 	
-	
+	//getter and setter
 	public int getCode() {
 		return code;
 	}
 	public void setCode(int code) throws ExceptionCard {
 		if(code<0) {
-			throw new ExceptionCard("El c�digo no puede ser menor que 0");
+			throw new ExceptionCard("El codigo no puede ser menor que 0");
 		}
 		this.code = code;
 	}
@@ -81,7 +87,16 @@ public class Card {
 		this.categ = categ;
 	}
 
-
+	//metodo para saber si la carta esta disponible
+	public String isAvailability(boolean b){
+		String availability = "No";
+		if(b){
+			availability = "Si";
+		}
+		return availability;
+	}	
+	
+	//hashCode and equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(code);
