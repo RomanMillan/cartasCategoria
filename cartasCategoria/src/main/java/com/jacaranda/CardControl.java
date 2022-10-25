@@ -42,7 +42,7 @@ public class CardControl {
 		try {
 			session.getTransaction().begin();
 			session.save(card);
-			session.getTransaction();
+			session.getTransaction().commit();
 			add=true;
 		} catch (Exception e) {
 			System.out.println(e);
