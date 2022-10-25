@@ -7,21 +7,14 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
 public class ConnectionDAO {
-	private static StandardServiceRegistry sr ;
-	private static SessionFactory sf;
-	private static Session session;
+	private static StandardServiceRegistry sr =new StandardServiceRegistryBuilder().configure().build();;
+	private static SessionFactory sf =new MetadataSources(sr).buildMetadata().buildSessionFactory();
+	private static Session session = sf.openSession();
 	
-	public ConnectionDAO() {
-		sr = new StandardServiceRegistryBuilder().configure().build();
-		sf = new MetadataSources(sr).buildMetadata().buildSessionFactory();
-		session = sf.openSession();
-	}
-	
-	
+		
 	public static Session getSession() {
 		return session;
 	}
-
 
 	//Metodo leer Usuario
 	public boolean validUser(String password) {

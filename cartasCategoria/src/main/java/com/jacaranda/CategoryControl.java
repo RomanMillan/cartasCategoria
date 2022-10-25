@@ -43,7 +43,7 @@ public class CategoryControl {
 		try {
 			session.getTransaction().begin();
 			session.save(category);
-			session.getTransaction();
+			session.getTransaction().commit();
 			add=true;
 		} catch (Exception e) {
 			System.out.println(e);
