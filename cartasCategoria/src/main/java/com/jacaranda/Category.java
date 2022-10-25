@@ -18,7 +18,7 @@ public class Category {
 	private Set<Card> card;
 	
 	public Category() {
-		super();
+		super();	
 		this.nameCategory = null;
 		this.card = null;
 	}

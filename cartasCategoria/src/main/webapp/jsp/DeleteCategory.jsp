@@ -30,7 +30,7 @@
 			</td>
 			
 			<td>
-				<a href=""><button >Si</button></a>
+				<a href="ConfirmDeleteCategory"><button >Si</button></a>
 			</td>
 			
 			<td>
