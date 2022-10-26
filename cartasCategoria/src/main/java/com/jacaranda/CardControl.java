@@ -35,7 +35,7 @@ public class CardControl {
 		return delete;
 	}
 	
-	public static boolean addCategory( Card card) {
+	public static boolean addCard( Card card) {
 		boolean add = false;
 		Session session = ConnectionDAO.getSession();
 		

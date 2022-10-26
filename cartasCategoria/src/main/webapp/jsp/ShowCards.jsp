@@ -18,9 +18,14 @@
 	</head>
 	<body>
 		<div align="center">
+		<%int idCategory = Integer.parseInt(request.getParameter("key"));	 %>
 			<table>
 				<tr>
-					<td colspan="6"><a href='../html/AddCard.html'><img width=50px id=add src=../images/add.png ></a></td>
+					<td colspan="6">
+						<a href="AddFormCard.jsp?key=<%= idCategory%>">
+							<img width=50px id=add src=../images/add.png >
+						</a>
+					</td>
 				</tr>
 				<tr>
 					<td>Nombre</td>
@@ -33,7 +38,6 @@
 				
 				<%	
 					Card card = new Card();
-					int idCategory = Integer.parseInt(request.getParameter("key"));	
 					CategoryControl c = new CategoryControl();
 					Category cat = c.getCategory(idCategory);
 					
@@ -45,7 +49,7 @@
 						text.append("<td>"+i.getPrice()+"</td>");
 						text.append("<td>"+i.getAcquisition()+"</td>");
 						text.append("<td>"+card.isAvailability(i.isDeck_cards())+"</td>");
-						text.append("<td><a href='DeleteCategory.jsp?key="+i.getCode()+"'><img width=50px id=delete src=../images/mod.png ></a></td>");
+						text.append("<td><a href='ModifyCategory.jsp?key="+i.getCode()+"'><img width=50px id=modify src=../images/mod.png ></a></td>");
 						text.append("<td><a href='DeleteCategory.jsp?key="+i.getCode()+"'><img width=50px id=delete src=../images/dele.png ></a></td>");
 						
 						text.append("</tr>");

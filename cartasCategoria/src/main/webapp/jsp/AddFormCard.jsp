@@ -1,14 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+	<html>
 	<head>
-	<meta charset="UTF-8">
-	<title>Insert title here</title>
-	<link rel="stylesheet" href="../css/Main.css" type="text/css">
-	<link rel="shortcut icon" href="../images/icon.png">
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" href="../css/Main.css" type="text/css">
+		<link rel="shortcut icon" href="../images/icon.png">
 	</head>
 	<body>
 		<div align="center">
-			<form action="../jsp/AddCard.jsp" id="add">
+			<%int idCategory = Integer.parseInt(request.getParameter("key")); %>
+			<form action="AddCard.jsp?key=<%= idCategory%>">
 				<table>
 					<tr>
 						<td>
