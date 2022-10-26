@@ -17,6 +17,7 @@
 		Category category = new Category();
 		category.setNameCategory(nameCategory);
 		c.addCategory(category);
+		
 	%>
 	
 	<jsp:forward page="Main.jsp"></jsp:forward>

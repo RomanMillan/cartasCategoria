@@ -12,6 +12,7 @@ public class CategoryControl {
 	public static Category getCategory(int id) {
 		Session session = ConnectionDAO.getSession();
 		Category category = (Category) session.get(Category.class,id);
+		
 		return category;
 	}
 	
@@ -22,12 +23,12 @@ public class CategoryControl {
 		return category;
 	}
 	
-	public static boolean deleteCategory(int id) {
+	public static boolean deleteCategory(Category c) {
 		boolean delete = false;
 		Session session = ConnectionDAO.getSession();
 		try {
 			session.getTransaction().begin();
-			session.delete(id);
+			session.delete(c);
 			session.getTransaction().commit();
 			delete=true;
 		} catch (Exception e) {

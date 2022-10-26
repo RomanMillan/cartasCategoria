@@ -12,10 +12,15 @@
 </head>
 
 <body>
+<jsp:useBean id="category" class="com.jacaranda.Category"/>
 	<%
 	int idCategory=Integer.parseInt(request.getParameter("key"));
+	
 	CategoryControl c =new CategoryControl();
+	category.setCodeCategory(idCategory);
+	
 	%>
+	
 	<div align="center" id="category">
 	<table>
 		<tr>
@@ -30,7 +35,7 @@
 			</td>
 			
 			<td>
-				<a href="ConfirmDeleteCategory"><button >Si</button></a>
+				<a href="ConfirmDeleteCategory.jsp?key=<%=category.getCodeCategory()%>"><button >Si</button></a>
 			</td>
 			
 			<td>
