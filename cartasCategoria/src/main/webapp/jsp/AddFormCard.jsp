@@ -9,10 +9,10 @@
 		<link rel="shortcut icon" href="../images/icon.png">
 	</head>
 	<body>
+		<%int idCategory = Integer.parseInt(request.getParameter("key")); %>
 		<div align="center">
-			<%int idCategory = Integer.parseInt(request.getParameter("key")); %>
-			<form action="AddCard.jsp?key=<%= idCategory%>">
 				<table>
+				<form action="AddCard.jsp">
 					<tr>
 						<td>
 							Nombre Carta
@@ -45,14 +45,25 @@
 							<input name="deck_cards" type="checkbox">
 						</td>
 					</tr>
-					
+					<tr hidden="true">
+						<td>
+							<input name="key" value="<%= idCategory%>">
+						</td>
+					</tr>
 					<tr>
 						<td colspan="2">
 							<a><button>Crear Carta</button></a>
 						</td>
 					</tr>
-				</table>
-			</form>
+					</form>
+			
+					<tr>
+						<td colspan="2">
+							<a href="ShowCards.jsp?key=<%= idCategory%>"><button>Atras</button></a>
+						</td>
+					</tr>
+				</table>	
+						
 		</div>
 	</body>
 </html>

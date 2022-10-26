@@ -26,6 +26,9 @@
 							<img width=50px id=add src=../images/add.png >
 						</a>
 					</td>
+					<td>
+						<a href="Main.jsp"><button>Atras</button></a>
+					</td>
 				</tr>
 				<tr>
 					<td>Nombre</td>
@@ -49,8 +52,8 @@
 						text.append("<td>"+i.getPrice()+"</td>");
 						text.append("<td>"+i.getAcquisition()+"</td>");
 						text.append("<td>"+card.isAvailability(i.isDeck_cards())+"</td>");
-						text.append("<td><a href='ModifyCategory.jsp?key="+i.getCode()+"'><img width=50px id=modify src=../images/mod.png ></a></td>");
-						text.append("<td><a href='DeleteCategory.jsp?key="+i.getCode()+"'><img width=50px id=delete src=../images/dele.png ></a></td>");
+						text.append("<td><a href='ConfirmModifyCard.jsp?key="+i.getCode()+"'><img width=50px id=modify src=../images/mod.png ></a></td>");
+						text.append("<td><a href='ConfirmDeleteCard.jsp?key="+idCategory+"&keyCard="+i.getCode()+"'><img width=50px id=delete src=../images/dele.png ></a></td>");
 						
 						text.append("</tr>");
 					 } 

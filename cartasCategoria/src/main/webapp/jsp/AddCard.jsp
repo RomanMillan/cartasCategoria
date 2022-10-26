@@ -16,12 +16,13 @@
 	</head>
 	<body>
 		<%
+			
 			//cogemos los parametros
-			int idCategory = Integer.parseInt(request.getParameter("key"));
 			String nameCard = request.getParameter("nameCard");
 			Double price = Double.parseDouble(request.getParameter("price"));
 			String date = request.getParameter("date");
 			Boolean deck_cards = true; //request.getParameter("deck_cards");
+			int idCategory = Integer.parseInt(request.getParameter("key"));
 			
 			//creamos los objetos necesarios
 			CardControl c = new CardControl();
@@ -39,6 +40,6 @@
 			//añadimos la 
 			c.addCard(card);
 		%>	
-		<jsp:forward page="addCard.html"></jsp:forward>
+		<jsp:forward page="ShowCards.jsp"></jsp:forward>
 	</body>
 </html>
