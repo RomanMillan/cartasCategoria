@@ -29,7 +29,7 @@
 			for(Category i: category){
 				text.append("<tr><td> <a href='ShowCards.jsp?key="+i.getCodeCategory()+"'</a>"+ i.getNameCategory()+"</td>");
 
-				text.append("<td><a href='DeleteCategory.jsp?key="+i.getCodeCategory()+"'><img width=50px id=delete src=../images/mod.png ></a></td>");
+				text.append("<td><a href='ModCategory.jsp?key="+i.getCodeCategory()+"'><img width=50px id=delete src=../images/mod.png ></a></td>");
 				text.append("<td><a href='DeleteCategory.jsp?key="+i.getCodeCategory()+"'><img width=50px id=delete src=../images/dele.png ></a></td>");
 				
 				text.append("</tr>");

@@ -20,7 +20,7 @@ CREATE TABLE CARD
 	acquisition date,
 	deck_cards		boolean,
 	CONSTRAINT pk_historial PRIMARY KEY(code),
-	CONSTRAINT fk_historial FOREIGN KEY (codeCategory) REFERENCES CATEGORY(codeCategory) ON UPDATE CASCADE
+	CONSTRAINT fk_historial FOREIGN KEY (codeCategory) REFERENCES CATEGORY(codeCategory) ON DELETE CASCADE
 	);
 	
 INSERT INTO USER
