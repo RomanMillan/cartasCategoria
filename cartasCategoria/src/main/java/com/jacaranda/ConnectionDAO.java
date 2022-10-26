@@ -15,7 +15,8 @@ public class ConnectionDAO {
 	public static Session getSession() {
 		return session;
 	}
-
+	
+	
 	//Metodo leer Usuario
 	public boolean validUser(String password) {
 		boolean valid = false;

@@ -19,6 +19,7 @@ public class Category {
 	
 	public Category() {
 		super();	
+		this.codeCategory=0;
 		this.nameCategory = null;
 		this.card = null;
 	}
@@ -44,6 +45,10 @@ public class Category {
 	}
 	
 	
+	public void setCodeCategory(int codeCategory) {
+		this.codeCategory = codeCategory;
+	}
+
 	public int getCodeCategory() {
 		return codeCategory;
 	}

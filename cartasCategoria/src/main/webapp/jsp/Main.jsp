@@ -23,9 +23,12 @@
 			CategoryControl c = new CategoryControl();
 			List<Category> category = CategoryControl.getCategoryC();
 			StringBuilder text = new StringBuilder();
+			text.append("<tr><td colspan='3'>Añadar categoría </td></tr>");
+			text.append("<tr><td colspan='3'><a href='../html/AddCategory.html'><img width=100px id=delete src=../images/add.png ></a></td></tr>");
+			text.append("<tr><td>Categoría</td><td>Editar</td><td>Eliminar</td></td>");
 			for(Category i: category){
 				text.append("<tr><td> <a href='ShowCards.jsp?key="+i.getCodeCategory()+"'</a>"+ i.getNameCategory()+"</td>");
-				text.append("<td><a href='../html/AddCategory.html?key="+i.getCodeCategory()+"'><img width=50px id=delete src=../images/add.png ></a></td>");
+
 				text.append("<td><a href='DeleteCategory.jsp?key="+i.getCodeCategory()+"'><img width=50px id=delete src=../images/mod.png ></a></td>");
 				text.append("<td><a href='DeleteCategory.jsp?key="+i.getCodeCategory()+"'><img width=50px id=delete src=../images/dele.png ></a></td>");
 				
