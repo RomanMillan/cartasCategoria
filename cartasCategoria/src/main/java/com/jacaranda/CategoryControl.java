@@ -51,4 +51,22 @@ public class CategoryControl {
 		}
 		return add;
 	}
+	
+	public static boolean modCategory(String category, int id) throws ExceptionCategory {
+		boolean mod = false;
+		Session session = ConnectionDAO.getSession();
+		CategoryControl c = new CategoryControl();
+		Category oldCategory= c.getCategory(id);
+		oldCategory.setNameCategory(category);
+		try {
+			
+			session.getTransaction().begin();
+			session.update(oldCategory);
+			session.getTransaction().commit();
+			mod=true;
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return mod;
+	}
 }

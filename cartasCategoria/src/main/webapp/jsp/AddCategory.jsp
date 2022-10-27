@@ -12,6 +12,7 @@
 </head>
 <body>
 	<%
+	
 		String nameCategory = request.getParameter("nameC");
 		CategoryControl c = new CategoryControl();
 		Category category = new Category();

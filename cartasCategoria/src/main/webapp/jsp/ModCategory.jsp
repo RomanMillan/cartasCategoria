@@ -10,17 +10,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:useBean id="i" class="com.jacaranda.Category"/>
+<script >
+	function goBack() {
+		 window.history.go(-1);
+	}
+</script>
+<jsp:useBean id="category" class="com.jacaranda.Category"/>
 
 <%
 	int idCategory=Integer.parseInt(request.getParameter("key"));
 	
 	CategoryControl c =new CategoryControl();
-	i.setCodeCategory(idCategory);
+	category.setCodeCategory(idCategory);
 	
 	%>
 	<div align="center">
-	<form action="ConfirmModCategory.jsp" id="add">
+	<form action="ConfirmModCategory.jsp?key=<%=category.getCodeCategory()%>" id="add">
 	<table>
 	<tr>
 			<td>
@@ -42,7 +47,7 @@
 				<input name="nameC" type="text">
 			</td>
 			<td>
-				<a href="ConfirmModCategory.jsp?key=<%=i.getCodeCategory()%>" ><button >Modificar categoría</button></a>
+				<a href="ConfirmModCategory.jsp?key=<%=category.getCodeCategory()%>" ><button >Modificar categoría</button></a>
 			</td>
 			</form>
 				
@@ -51,7 +56,7 @@
 		</tr>
 	</table>
 	
-	<a href="Main.jsp"><button>Atras</button></a>
+	<!--<button onclick="goBack()">Atras</button>  -->
 	</div>
 	
 </body>
