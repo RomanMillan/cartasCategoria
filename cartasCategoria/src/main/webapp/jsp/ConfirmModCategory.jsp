@@ -10,7 +10,9 @@
 <body>
 	<%
 	String nameCategory = request.getParameter("nameC");
-	int idCategory=Integer.parseInt(request.getParameter("key"));
+		
+	 int idCategory= Integer.parseInt(request.getParameter("idCategory"));
+	
 	
 	CategoryControl c =new CategoryControl();
 	c.modCategory(nameCategory,idCategory);

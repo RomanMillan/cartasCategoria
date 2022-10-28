@@ -25,7 +25,7 @@
 	
 	%>
 	<div align="center">
-	<form action="ConfirmModCategory.jsp?key=<%=category.getCodeCategory()%>" id="add">
+	<form action="ConfirmModCategory.jsp" id="add">
 	<table>
 	<tr>
 			<td>
@@ -44,10 +44,11 @@
 				Nombre categoría :
 			</td>
 			<td>
-				<input name="nameC" type="text">
+				<input required name="nameC" type="text">
+				<input type="hidden" name="idCategory" value="<%=category.getCodeCategory()%>">
 			</td>
 			<td>
-				<a href="ConfirmModCategory.jsp?key=<%=category.getCodeCategory()%>" ><button >Modificar categoría</button></a>
+				 <button >Modificar categoría</button>
 			</td>
 			</form>
 				
@@ -56,7 +57,12 @@
 		</tr>
 	</table>
 	
-	<!--<button onclick="goBack()">Atras</button>  -->
+	
+	</div>
+	
+	
+	<div align="center">
+		<a href="Main.jsp"><button>Atras</button></a>
 	</div>
 	
 </body>

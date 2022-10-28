@@ -23,7 +23,7 @@
 				<tr>
 					<td colspan="6">
 						<a href="AddFormCard.jsp?key=<%= idCategory%>">
-							<img width=50px id=add src=../images/add.png >
+							<img width=100px id=add src=../images/add.png >
 						</a>
 					</td>
 					<td>

@@ -34,6 +34,7 @@ public class Category {
 		
 		if(nameCategory==null||"".equals(nameCategory)) {
 			throw new ExceptionCategory("El campo categorya es obligatorio");
+			
 		}
 		this.nameCategory = nameCategory;
 	}

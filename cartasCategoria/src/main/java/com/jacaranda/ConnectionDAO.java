@@ -17,6 +17,7 @@ public class ConnectionDAO {
 	}
 	
 	
+	
 	//Metodo leer Usuario
 	public boolean validUser(String password) {
 		boolean valid = false;

@@ -16,6 +16,20 @@
 	<link rel="shortcut icon" href="../images/icon.png">
 </head>
 	<body>
+	
+	<div align="center" >
+		<table >
+			<tr>
+				<td>
+					Cerrar sesión
+				</td>
+				<td>
+					<a href="../html/Index.html"><img width=100px src="../images/closeSession.png" ></a>
+				</td>
+			</tr>
+		</table>
+	
+	</div>
 		<div align="center">
 			<table>
 			<%
@@ -40,5 +54,7 @@
 			<%=text.toString()%>
 		</table>
 	</div>
+	
+	
 	</body>
 </html>
