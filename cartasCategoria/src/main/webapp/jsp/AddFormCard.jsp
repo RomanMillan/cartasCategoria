@@ -18,7 +18,7 @@
 							Nombre Carta
 						</td>
 						<td>
-							<input name="nameCard" type="text">
+							<input name="nameCard" type="text" required="required">
 						</td>
 					</tr>
 					<tr>
@@ -26,7 +26,7 @@
 							Precio
 						</td>
 						<td>
-							<input name="price" type="number">
+							<input name="price" type="number" required="required">
 						</td>
 					</tr>
 					<tr>
@@ -34,7 +34,7 @@
 							Fecha
 						</td>
 						<td>
-							<input name="date" type="date">
+							<input name="date" type="date" required="required">
 						</td>
 					</tr>
 					<tr>

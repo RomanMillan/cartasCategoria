@@ -20,14 +20,17 @@
 		<div align="center">
 		<%int idCategory = Integer.parseInt(request.getParameter("key"));	 %>
 			<table>
+			<tr>
+				<td colspan="5">Añadir Carta</td>
+				<td rowspan="2" colspan="3">
+					<a href="Main.jsp"><button>Atras</button></a>
+				</td>
+			</tr>
 				<tr>
-					<td colspan="6">
+					<td colspan="5">
 						<a href="AddFormCard.jsp?key=<%= idCategory%>">
 							<img width=100px id=add src=../images/add.png >
 						</a>
-					</td>
-					<td>
-						<a href="Main.jsp"><button>Atras</button></a>
 					</td>
 				</tr>
 				<tr>

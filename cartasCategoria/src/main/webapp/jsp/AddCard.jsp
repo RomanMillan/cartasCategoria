@@ -21,7 +21,11 @@
 			String nameCard = request.getParameter("nameCard");
 			Double price = Double.parseDouble(request.getParameter("price"));
 			String date = request.getParameter("date");
-			Boolean deck_cards = true; //request.getParameter("deck_cards");
+			String deck = request.getParameter("deck_cards");
+			boolean deck_cards = false;
+			if(deck !=null && deck.equals("on")){
+				deck_cards = true;
+			}
 			int idCategory = Integer.parseInt(request.getParameter("key"));
 			
 			//creamos los objetos necesarios
@@ -40,6 +44,6 @@
 			//añadimos la 
 			c.addCard(card);
 		%>	
-		<jsp:forward page="ShowCards.jsp"></jsp:forward>
+		<jsp:forward page='ShowCards.jsp?key="<%= idCategory %>"'></jsp:forward>
 	</body>
 </html>

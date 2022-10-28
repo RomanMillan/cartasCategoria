@@ -15,9 +15,14 @@
 			String nameCard = request.getParameter("nameCard");
 			Double price = Double.parseDouble(request.getParameter("price"));
 			String date = request.getParameter("date");
-			Boolean deck_cards = true; //request.getParameter("deck_cards");
+			String deck = request.getParameter("deck_cards");
+			boolean deck_cards = false;
+			if(deck !=null && deck.equals("on")){
+				deck_cards = true;
+			}
+			
 			int idCategory = Integer.parseInt(request.getParameter("key"));
-			int idCard = Integer.parseInt(request.getParameter("idCard"));
+			int idCard = Integer.parseInt(request.getParameter("keyCard"));
 			
 			
 			//Recogemos la carta a buscar
@@ -25,7 +30,6 @@
 			Card card = c.getCard(idCard);
 			
 			//cambiamos los datos
-			//card.setCateg(category);
 			card.setName(nameCard);
 			card.setPrice(price);
 			card.setAcquisition(date);
