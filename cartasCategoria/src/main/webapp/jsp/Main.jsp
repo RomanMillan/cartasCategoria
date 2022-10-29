@@ -24,7 +24,7 @@
 					Cerrar sesión
 				</td>
 				<td>
-					<a href="CloseSession.jsp"><img width=100px src="../images/closeSession.png" ></a>
+					<a href="../html/Index.html"><img width=100px src="../images/closeSession.png" ></a>
 				</td>
 			</tr>
 		</table>
