@@ -10,6 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/**
+ * Class that builds and manages a category.
+ * @version 1.0
+ *
+ */
 @Entity(name="CATEGORY")
 public class Category {
 	@Id
@@ -19,6 +24,8 @@ public class Category {
 	@OneToMany(mappedBy="categ")
 	private Set<Card> card;
 	
+	
+	//builder
 	public Category() {
 		super();	
 		this.codeCategory=0;
@@ -26,6 +33,7 @@ public class Category {
 		this.card = null;
 	}
 
+	//getter and setter
 	public String getNameCategory() {
 		return nameCategory;
 	}
@@ -62,6 +70,7 @@ public class Category {
 	}
 	
 	
+	//hashCode and equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(codeCategory);
@@ -79,9 +88,6 @@ public class Category {
 		return codeCategory == other.codeCategory;
 	}
 
-	
-	
-	
 	
 }
 

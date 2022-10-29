@@ -11,6 +11,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * Class that builds and manages a card.
+ * @version 1.0
+ * 
+ */
 @Entity(name="CARD")
 public class Card {
 	@Id
@@ -25,12 +30,19 @@ public class Card {
 	private Category categ;
 	
 	
-	//constructores
+	//builder
 	public Card() {
 		super();
 	}
 
-
+	/**
+	 * Method that constructs a card object.
+	 * @param code
+	 * @param name
+	 * @param price
+	 * @param acquisition
+	 * @param deck_cards
+	 */
 	public Card(int code, String name, double price, String acquisition, boolean deck_cards) {
 		super();
 		this.code = code;
@@ -44,52 +56,67 @@ public class Card {
 	public int getCode() {
 		return code;
 	}
+	
 	public void setCode(int code) throws ExceptionCard {
 		if(code<0) {
 			throw new ExceptionCard("El codigo no puede ser menor que 0");
 		}
 		this.code = code;
 	}
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) throws ExceptionCard {
 		if(name==null||"".equals(name)) {
-			throw new ExceptionCard("El campo nombre es obligat�rio");
+			throw new ExceptionCard("El campo nombre es obligatorio");
 		}else if(name.length()>100) {
 			throw new ExceptionCard("El nombre no puede tener una longitud mayor a 100");
 		}
 		this.name = name;
 	}
+	
 	public double getPrice() {
 		return price;
 	}
+	
 	public void setPrice(double price) throws ExceptionCard {
 		if(code<0) {
 			throw new ExceptionCard("El precio no puede ser menor que 0");
 		}
 		this.price = price;
 	}
+	
 	public String getAcquisition() {
 		return acquisition;
 	}
+	
 	public void setAcquisition(String acquisition) {
 		this.acquisition = acquisition;
 	}
+	
 	public boolean isDeck_cards() {
 		return deck_cards;
 	}
+	
 	public void setDeck_cards(boolean deck_cards) {
 		this.deck_cards = deck_cards;
 	}
+	
 	public Category getCateg() {
 		return categ;
 	}
+	
 	public void setCateg(Category categ) {
 		this.categ = categ;
 	}
 
-	//metodo para saber si la carta esta disponible
+	/**
+	 * Method to know if the card is available
+	 * @param b
+	 * @return Whether the card is available or not.
+	 */
 	public String isAvailability(boolean b){
 		String availability = "No";
 		if(b){
@@ -97,6 +124,7 @@ public class Card {
 		}
 		return availability;
 	}	
+	
 	
 	//hashCode and equals
 	@Override

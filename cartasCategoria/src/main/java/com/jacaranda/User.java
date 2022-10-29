@@ -6,6 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * Class that builds and manages a user.
+ * @version 1.0
+ *
+ */
 @Entity
 @Table(name="USER")
 public class User {
@@ -19,7 +24,11 @@ public class User {
 		this.name = "null";
 	}
 	
-	
+	/**
+	 * Method that constructs a user object.
+	 * @param password
+	 * @param name
+	 */
 	public User(String password, String name) {
 		super();
 		this.password = password;
@@ -28,6 +37,7 @@ public class User {
 
 
 
+	//getter and setter
 	public String getPassword() {
 		return password;
 	}
@@ -50,6 +60,7 @@ public class User {
 		this.name = name;
 	}
 
+	//hascode and Equals
 	@Override
 	public int hashCode() {
 		return Objects.hash(password);
