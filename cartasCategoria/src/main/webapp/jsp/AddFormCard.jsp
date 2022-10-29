@@ -26,7 +26,7 @@
 							Precio
 						</td>
 						<td>
-							<input name="price" type="number" required="required">
+							<input name="price" type="number" min="1" required="required">
 						</td>
 					</tr>
 					<tr>
