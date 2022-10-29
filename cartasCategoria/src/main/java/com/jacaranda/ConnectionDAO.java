@@ -20,7 +20,9 @@ public class ConnectionDAO {
 		return session;
 	}
 	
-	
+	public static void closeSession() {
+		session.close();
+	}
 	
 	//Metodo leer Usuario
 	public boolean validUser(String password) {
