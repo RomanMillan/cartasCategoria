@@ -28,7 +28,7 @@
 			</tr>
 				<tr>
 					<td colspan="5">
-						<a href="AddFormCard.jsp?key=<%= idCategory%>">
+						<a href="AddFormCard.jsp?key=<%=idCategory%>">
 							<img width=100px id=add src=../images/add.png >
 						</a>
 					</td>
@@ -44,8 +44,8 @@
 				
 				<%	
 					Card card = new Card();
-					CategoryControl c = new CategoryControl();
-					Category cat = c.getCategory(idCategory);
+					
+					Category cat = CategoryControl.getCategory(idCategory);
 					
 					Set<Card> cards = cat.getCard();
 							
@@ -61,7 +61,6 @@
 						text.append("</tr>");
 					 } 
 
-						
 				%>
 			
 				<%=text.toString()%>

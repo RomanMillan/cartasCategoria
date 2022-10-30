@@ -14,8 +14,7 @@
 	 int idCategory= Integer.parseInt(request.getParameter("idCategory"));
 	
 	
-	CategoryControl c =new CategoryControl();
-	c.modCategory(nameCategory,idCategory);
+	CategoryControl.modCategory(nameCategory,idCategory);
 	%>
 	<jsp:forward page="Main.jsp"></jsp:forward>
 

@@ -17,8 +17,8 @@
 			int idCategory = Integer.parseInt(request.getParameter("key"));
 			int idCard = Integer.parseInt(request.getParameter("keyCard"));
 			
-			CardControl cardC  = new CardControl();
-			Card c = cardC.getCard(idCard);
+			
+			Card c = CardControl.getCard(idCard);
 		%>
 		
 		<div align="center" id="category">
@@ -30,11 +30,11 @@
 					
 					
 					<td>
-						<a href="DeleteCard.jsp?keyCard=<%= idCard%>&key=<%= idCategory%>"><button >Si</button></a>
+						<a href="DeleteCard.jsp?keyCard=<%=idCard%>&key=<%=idCategory%>"><button>Si</button></a>
 					</td>
 					
 					<td>
-						<a href="ShowCards.jsp?key=<%= idCategory%>"><button>No</button></a>
+						<a href="ShowCards.jsp"><button>No</button></a>
 					</td>
 					
 				</tr>

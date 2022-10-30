@@ -16,7 +16,6 @@
 	<%
 	int idCategory=Integer.parseInt(request.getParameter("key"));
 	
-	CategoryControl c =new CategoryControl();
 	category.setCodeCategory(idCategory);
 	
 	%>
@@ -30,7 +29,7 @@
 			<td>
 				
 				
-				<%=c.getCategory(idCategory).getNameCategory()%>
+				<%=CategoryControl.getCategory(idCategory).getNameCategory()%>
 				
 			</td>
 			

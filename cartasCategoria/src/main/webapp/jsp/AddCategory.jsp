@@ -14,10 +14,9 @@
 	<%
 	
 		String nameCategory = request.getParameter("nameC");
-		CategoryControl c = new CategoryControl();
 		Category category = new Category();
 		category.setNameCategory(nameCategory);
-		c.addCategory(category);
+		CategoryControl.addCategory(category);
 		
 	%>
 	

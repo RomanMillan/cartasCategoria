@@ -20,21 +20,22 @@
 <%
 	int idCategory=Integer.parseInt(request.getParameter("key"));
 	
-	CategoryControl c =new CategoryControl();
+	
 	category.setCodeCategory(idCategory);
 	
 	%>
 	<div align="center">
-	<form action="ConfirmModCategory.jsp" id="add">
+		<form action="ConfirmModCategory.jsp" id="add">
 	<table>
 	<tr>
+		
 			<td>
 				Categoría a modificar
 			</td>
 			<td>
 				
 				
-				<%=c.getCategory(idCategory).getNameCategory()%>
+				<%=CategoryControl.getCategory(idCategory).getNameCategory()%>
 				
 			</td>
 			
@@ -50,13 +51,11 @@
 			<td>
 				 <button >Modificar categoría</button>
 			</td>
-			</form>
-				
 			
-			
+
 		</tr>
 	</table>
-	
+	</form>
 	
 	</div>
 	

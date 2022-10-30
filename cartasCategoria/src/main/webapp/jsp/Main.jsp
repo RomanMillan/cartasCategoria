@@ -34,7 +34,6 @@
 			<table>
 			<%
 			
-			CategoryControl c = new CategoryControl();
 			List<Category> category = CategoryControl.getCategoryC();
 			StringBuilder text = new StringBuilder();
 			text.append("<tr><td colspan='3'>Añadar categoría </td></tr>");

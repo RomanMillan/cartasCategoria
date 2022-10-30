@@ -26,8 +26,7 @@
 			
 			
 			//Recogemos la carta a buscar
-			CardControl c = new CardControl();
-			Card card = c.getCard(idCard);
+			Card card = CardControl.getCard(idCard);
 			
 			//cambiamos los datos
 			card.setName(nameCard);
@@ -36,8 +35,8 @@
 			card.setDeck_cards(deck_cards);
 			
 			//añadimos la 
-			c.modCard(card);
+			CardControl.modCard(card);
 		%>
-		<jsp:forward page="ShowCards.jsp?key=<%= idCategory%>"></jsp:forward>
+		<jsp:forward page="ShowCards.jsp"></jsp:forward>
 	</body>
 </html>

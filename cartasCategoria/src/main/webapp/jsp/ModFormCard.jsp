@@ -14,6 +14,11 @@
 		<%int idCategory = Integer.parseInt(request.getParameter("key")); %>
 		<div align="center">
 			<table>
+				<tr>
+					<td>
+						Modificar Carta
+					</td>
+				</tr>
 				<form action="ModCard.jsp">
 				<tr>
 					<td>
@@ -49,10 +54,10 @@
 				</tr>
 				<tr hidden="true">
 					<td>
-						<input name="keyCard" value="<%= idCard %>">
+						<input name="keyCard" value="<%=idCard%>">
 					</td>
 					<td>
-						<input name="key" value="<%= idCategory %>">
+						<input name="key" value="<%=idCategory%>">
 					</td>
 				</tr>
 				<tr>
@@ -63,7 +68,7 @@
 				</form>
 				<tr>
 					<td colspan="2">
-						<a href="ShowCards.jsp?key=<%= idCategory%>"><button>Atras</button></a>
+						<a href="ShowCards.jsp?key=<%=idCategory%>"><button>Atras</button></a>
 					</td>
 				</tr>
 			</table>

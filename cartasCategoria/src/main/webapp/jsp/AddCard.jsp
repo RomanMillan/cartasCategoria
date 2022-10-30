@@ -29,10 +29,8 @@
 			int idCategory = Integer.parseInt(request.getParameter("key"));
 			
 			//creamos los objetos necesarios
-			CardControl c = new CardControl();
 			Card card = new Card();
-			CategoryControl categoryC = new CategoryControl();
-			Category category = categoryC.getCategory(idCategory);
+			Category category = CategoryControl.getCategory(idCategory);
 			
 			//insertamos los datos
 			card.setCateg(category);
@@ -42,8 +40,8 @@
 			card.setDeck_cards(deck_cards);
 			
 			//añadimos la 
-			c.addCard(card);
+			CardControl.addCard(card);
 		%>	
-		<jsp:forward page='ShowCards.jsp?key="<%= idCategory %>"'></jsp:forward>
+		<jsp:forward page='ShowCards.jsp'></jsp:forward>
 	</body>
 </html>
