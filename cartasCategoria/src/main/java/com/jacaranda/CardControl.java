@@ -18,8 +18,7 @@ public class CardControl {
 	 * @return a card.
 	 */
 	public static Card getCard(int id) {
-		Session session = ConnectionDAO.getSession();
-		Card card = (Card) session.get(Card.class,id);
+		Card card = (Card) ConnectionDAO.getSession().get(Card.class,id);
 		return card;
 	}
 	
@@ -28,8 +27,7 @@ public class CardControl {
 	 * @return card list.
 	 */
 	public static List<Card> getCard(){
-		Session session= ConnectionDAO.getSession();
-		Query<Card> query = session.createQuery("SELECT h FROM com.jacaranda.Card h");
+		Query<Card> query = ConnectionDAO.getSession().createQuery("SELECT h FROM com.jacaranda.Card h");
 		List<Card> card = (List<Card>) query.getResultList();
 		return card;
 	}
@@ -41,11 +39,9 @@ public class CardControl {
 	 */
 	public static boolean deleteCard(Card card) {
 		boolean delete = false;
-		Session session = ConnectionDAO.getSession();
 		try {
-			session.getTransaction().begin();
-			session.delete(card);
-			session.getTransaction().commit();
+			ConnectionDAO.getSession().delete(card);
+			ConnectionDAO.getSession().beginTransaction().commit();
 			delete=true;
 		} catch (Exception e) {
 			System.out.println(e);
@@ -59,13 +55,10 @@ public class CardControl {
 	 * @return A boolean of whether or not the card has been added.
 	 */
 	public static boolean addCard( Card card) {
-		boolean add = false;
-		Session session = ConnectionDAO.getSession();
-		
+		boolean add = false;		
 		try {
-			session.getTransaction().begin();
-			session.save(card);
-			session.getTransaction().commit();
+			ConnectionDAO.getSession().save(card);
+			ConnectionDAO.getSession().beginTransaction().commit();
 			add=true;
 		} catch (Exception e) {
 			System.out.println(e);
@@ -80,13 +73,10 @@ public class CardControl {
 	 * @throws ExceptionCategory If it could not be modified.
 	 */
 	public static boolean modCard(Card card) throws ExceptionCategory {
-		boolean mod = false;
-		Session session = ConnectionDAO.getSession();
-		
+		boolean mod = false;		
 		try {
-			session.getTransaction().begin();
-			session.update(card);
-			session.getTransaction().commit();
+			ConnectionDAO.getSession().update(card);
+			ConnectionDAO.getSession().beginTransaction().commit();
 			mod=true;
 		} catch (Exception e) {
 			System.out.println(e);

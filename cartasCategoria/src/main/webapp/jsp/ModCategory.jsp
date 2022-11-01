@@ -28,15 +28,11 @@
 		<form action="ConfirmModCategory.jsp" id="add">
 	<table>
 	<tr>
-		
 			<td>
 				Categoría a modificar
 			</td>
 			<td>
-				
-				
-				<%=CategoryControl.getCategory(idCategory).getNameCategory()%>
-				
+				<%=CategoryControl.getCategory(idCategory).getNameCategory()%>	
 			</td>
 			
 		<tr>
