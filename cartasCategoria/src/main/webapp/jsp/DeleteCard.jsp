@@ -9,11 +9,9 @@
 	</head>
 	<body>
 		<%
-			int idCategory = Integer.parseInt(request.getParameter("key"));
-			
 			int idCard= Integer.parseInt(request.getParameter("keyCard"));
 			CardControl.deleteCard(CardControl.getCard(idCard));
 		%>
-			<jsp:forward page="ShowCards.jsp?key=<%=idCategory%>"></jsp:forward>
+			<jsp:forward page="ShowCards.jsp"></jsp:forward>
 	</body>
 </html>
